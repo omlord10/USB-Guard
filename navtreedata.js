@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "FPGA", "index.html", [
+  [ "USB-Guard", "index.html", [
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],
