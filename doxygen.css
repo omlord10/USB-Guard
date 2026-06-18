@@ -2480,7 +2480,7 @@ details[open]>summary::before {
 }
 
 html {
---timestamp: 'Чт 18 Июн 2026 23:40:35';
+--timestamp: 'Чт 18 Июн 2026 23:53:10';
 }
 span.timestamp { content: ' '; }
 span.timestamp:before { content: var(--timestamp); }
