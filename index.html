@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>USB-Guard: Титульная страница</title>
+<title>USB-Guard: USBGuard v4 — Sector Scanner + HDMI Terminal</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="jquery.js"></script>
@@ -15,12 +15,6 @@
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -36,26 +30,11 @@
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
 <!-- end header part -->
 <!-- Создано системой Doxygen 1.15.0 -->
-<script type="text/javascript">
-var searchBox = new SearchBox("searchBox", "search/",'.html');
-</script>
 <script type="text/javascript">
 $(function() { codefold.init(); });
 </script>
@@ -74,40 +53,190 @@ $(function(){initNavTree('index.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<div id="MSearchResults">
-<div class="SRPage">
-<div id="SRIndex">
-<div id="SRResults"></div>
-<div class="SRStatus" id="Loading">Загрузка...</div>
-<div class="SRStatus" id="Searching">Поиск...</div>
-<div class="SRStatus" id="NoMatches">Не найдено</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="header">
-  <div class="headertitle"><div class="title">USB-Guard Документация</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">USBGuard v4 — Sector Scanner + HDMI Terminal </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__2home_2yama_2Documents_22kurs_072_08_2schematechnik_2absolute__final__version_2README"></a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Обзор</h1>
+<p>Arduino Nano (USB Host Shield) сканирует флешку на сигнатуры угроз. Tang Nano 9K управляет кнопками, LED-индикацией и <b>выводит лог на HDMI-монитор</b> (640×480 @ 60 Hz).</p>
+<p>Весь текстовый вывод, который раньше шёл только в Serial Monitor Arduino IDE, теперь дублируется на HDMI-терминал через Tang Nano 9K.</p>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+Подключение</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Arduino Nano &lt;-&gt; Tang Nano 9K (через LLC 3.3V/5V)</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Arduino  </th><th class="markdownTableHeadNone">LLC  </th><th class="markdownTableHeadNone">Tang Nano 9K  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">D3 (TX SoftSerial)  </td><td class="markdownTableBodyNone">HV→LV  </td><td class="markdownTableBodyNone">P34 (uart_rx_pin)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">D2 (RX SoftSerial)  </td><td class="markdownTableBodyNone">LV→HV  </td><td class="markdownTableBodyNone">P33 (uart_tx_pin)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GND  </td><td class="markdownTableBodyNone">GND  </td><td class="markdownTableBodyNone">GND  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Внешние кнопки (active HIGH, внешний pull-down 10kΩ → GND)</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Кнопка  </th><th class="markdownTableHeadNone">Пин Tang  </th><th class="markdownTableHeadNone">Команда  </th><th class="markdownTableHeadNone">Описание  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">btn1  </td><td class="markdownTableBodyNone">P26  </td><td class="markdownTableBodyNone"><span class="tt">h</span>  </td><td class="markdownTableBodyNone">offset += 100  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">btn2  </td><td class="markdownTableBodyNone">P27  </td><td class="markdownTableBodyNone"><span class="tt">k</span>  </td><td class="markdownTableBodyNone">offset += 10 000  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">btn3  </td><td class="markdownTableBodyNone">P28  </td><td class="markdownTableBodyNone"><span class="tt">m</span>  </td><td class="markdownTableBodyNone">offset += 1 000 000  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Кнопки на плате Tang Nano 9K</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Кнопка  </th><th class="markdownTableHeadNone">Пин  </th><th class="markdownTableHeadNone">Команда  </th><th class="markdownTableHeadNone">Описание  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">S1  </td><td class="markdownTableBodyNone">P4  </td><td class="markdownTableBodyNone"><span class="tt">s</span>  </td><td class="markdownTableBodyNone">Start scan from current offset  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">S2  </td><td class="markdownTableBodyNone">P3  </td><td class="markdownTableBodyNone"><span class="tt">res</span>  </td><td class="markdownTableBodyNone">Reset offset to 0  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+LED</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">LED  </th><th class="markdownTableHeadNone">Пин  </th><th class="markdownTableHeadNone">Тип  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">led_ob[0..5]  </td><td class="markdownTableBodyNone">P10,P11,P13,P14,P15,P16  </td><td class="markdownTableBodyNone">onboard (active LOW)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">led_green  </td><td class="markdownTableBodyNone">P29  </td><td class="markdownTableBodyNone">external (active HIGH)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">led_red  </td><td class="markdownTableBodyNone">P30  </td><td class="markdownTableBodyNone">external (active HIGH)  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+HDMI</h2>
+<p>Встроенный разъём HDMI на Tang Nano 9K (пины 68-75, LVDS). Подключить HDMI-кабелем к монитору.</p>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Управление LED через UART</h1>
+<p>Символы от Arduino → Tang (направление RX):</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Символ  </th><th class="markdownTableHeadNone">Действие  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">0</span>-<span class="tt">5</span>  </td><td class="markdownTableBodyNone">toggle LED 1-6 (onboard)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">g</span>  </td><td class="markdownTableBodyNone">toggle green LED  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">r</span>  </td><td class="markdownTableBodyNone">toggle red LED  </td></tr>
+</table>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Статусные режимы LED</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Статус  </th><th class="markdownTableHeadNone">Символ  </th><th class="markdownTableHeadNone">Зелёный (P29)  </th><th class="markdownTableHeadNone">Красный (P30)  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">READY  </td><td class="markdownTableBodyNone"><span class="tt">R</span>  </td><td class="markdownTableBodyNone">медленно мигает  </td><td class="markdownTableBodyNone">выкл  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">NO_MEDIA  </td><td class="markdownTableBodyNone"><span class="tt">N</span>  </td><td class="markdownTableBodyNone">одиночные вспышки  </td><td class="markdownTableBodyNone">выкл  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">WORKING  </td><td class="markdownTableBodyNone"><span class="tt">W</span>  </td><td class="markdownTableBodyNone">попеременно  </td><td class="markdownTableBodyNone">попеременно  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">GOOD  </td><td class="markdownTableBodyNone"><span class="tt">G</span>  </td><td class="markdownTableBodyNone">горит  </td><td class="markdownTableBodyNone">выкл  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">BAD  </td><td class="markdownTableBodyNone"><span class="tt">B</span>  </td><td class="markdownTableBodyNone">выкл  </td><td class="markdownTableBodyNone">горит  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">ERROR  </td><td class="markdownTableBodyNone"><span class="tt">E</span>  </td><td class="markdownTableBodyNone">быстро мигает  </td><td class="markdownTableBodyNone">быстро мигает  </td></tr>
+</table>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+Структура файлов</h1>
+<div class="fragment"><div class="line">usbguard_v4/</div>
+<div class="line">├── fpga/</div>
+<div class="line">│   ├── usbguard.gprj          ← открыть в Gowin IDE</div>
+<div class="line">│   └── src/</div>
+<div class="line">│       ├── top.v               ← главный модуль (UART + LED + HDMI)</div>
+<div class="line">│       ├── svo_hdmi.v          ← HDMI pipeline (модифицированный)</div>
+<div class="line">│       ├── uart_rx.v           ← UART приёмник 9600 8N1</div>
+<div class="line">│       ├── uart_tx.v           ← UART передатчик 9600 8N1</div>
+<div class="line">│       ├── hdmi/               ← SVO библиотека (без изменений)</div>
+<div class="line">│       │   ├── svo_defines.vh</div>
+<div class="line">│       │   ├── svo_enc.v</div>
+<div class="line">│       │   ├── svo_tcard.v</div>
+<div class="line">│       │   ├── svo_term.v</div>
+<div class="line">│       │   ├── svo_tmds.v</div>
+<div class="line">│       │   └── svo_utils.v</div>
+<div class="line">│       ├── gowin_rpll/         ← PLL: 27→126 MHz</div>
+<div class="line">│       │   └── gowin_rpll.v</div>
+<div class="line">│       ├── gowin_clkdiv/       ← CLKDIV: 126/5 = 25.2 MHz</div>
+<div class="line">│       │   └── gowin_clkdiv.v</div>
+<div class="line">│       ├── usbguard.cst        ← пины</div>
+<div class="line">│       └── usbguard.sdc        ← тайминги</div>
+<div class="line">└── arduino/</div>
+<div class="line">    └── arduino_main/</div>
+<div class="line">        ├── arduino_main.ino    ← основной скетч</div>
+<div class="line">        ├── signature_engine.h</div>
+<div class="line">        ├── signature_engine.c</div>
+<div class="line">        └── signatures.h</div>
+</div><!-- fragment --><hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+Прошивка</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+FPGA (Tang Nano 9K)</h2>
+<ol type="1">
+<li>Открыть <span class="tt">fpga/usbguard.gprj</span> в Gowin IDE</li>
+<li>Synthesize → Place &amp; Route → Program Device</li>
+<li>Выбрать «Program to SRAM» для теста или «Program to Flash» для постоянной прошивки</li>
+</ol>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+Arduino Nano</h2>
+<ol type="1">
+<li>Открыть <span class="tt">arduino/arduino_main/arduino_main.ino</span> в Arduino IDE</li>
+<li>Установить библиотеку USB Host Shield 2.0 (через Library Manager)</li>
+<li>Board: Arduino Nano, Processor: ATmega328P</li>
+<li>Upload</li>
+</ol>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+Быстрый тест HDMI</h1>
+<p>После прошивки FPGA подключи HDMI-кабель к монитору. На экране появится тестовая карта (цветные полосы) — это <span class="tt">svo_tcard</span>. Как только Arduino начнёт отправлять текст по UART (9600 бод), он будет отображаться белым шрифтом поверх тестовой карты. </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
+<!-- HTML footer for doxygen 1.15.0-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="footer">Документация по USB-Guard. Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
+<!-- Авто-раскрытие всего дерева навигации слева -->
+<script type="text/javascript">
+  (function () {
+    function expandAll() {
+      var tree = document.getElementById('nav-tree');
+      if (!tree) return false;
+      // все свёрнутые узлы имеют ссылку-стрелку с классом arrow и символ ►
+      var changed = false;
+      var arrows = tree.querySelectorAll('a.arrow');
+      for (var i = 0; i < arrows.length; i++) {
+        var a = arrows[i];
+        // ► (►) = свёрнут; раскрываем кликом
+        if (a.textContent.indexOf('►') !== -1) {
+          a.click();
+          changed = true;
+        }
+      }
+      return changed;
+    }
+    var tries = 0;
+    var timer = setInterval(function () {
+      var changed = expandAll();
+      tries++;
+      // останавливаемся, когда раскрывать больше нечего или вышел лимит попыток
+      if ((!changed && tries > 3) || tries > 60) clearInterval(timer);
+    }, 250);
+  })();
+</script>
 </body>
 </html>

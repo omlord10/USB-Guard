@@ -15,12 +15,6 @@
 <script type="text/javascript" src="navtreedata.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-  $(function() { init_search(); });
-</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -36,26 +30,11 @@
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
 <!-- end header part -->
 <!-- Создано системой Doxygen 1.15.0 -->
-<script type="text/javascript">
-var searchBox = new SearchBox("searchBox", "search/",'.html');
-</script>
 <script type="text/javascript">
 $(function() { codefold.init(); });
 </script>
@@ -74,27 +53,6 @@ $(function(){initNavTree('globals_enum.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
-<!-- window showing the filter options -->
-<div id="MSearchSelectWindow"
-     onmouseover="return searchBox.OnSearchSelectShow()"
-     onmouseout="return searchBox.OnSearchSelectHide()"
-     onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
-
-<!-- iframe showing the search results (closed by default) -->
-<div id="MSearchResultsWindow">
-<div id="MSearchResults">
-<div class="SRPage">
-<div id="SRIndex">
-<div id="SRResults"></div>
-<div class="SRStatus" id="Loading">Загрузка...</div>
-<div class="SRStatus" id="Searching">Поиск...</div>
-<div class="SRStatus" id="NoMatches">Не найдено</div>
-</div>
-</div>
-</div>
-</div>
-
 <div class="contents">
 <div class="textblock">Список всех перечислителей соссылками на файлы, к которым они относятся:</div><ul>
 <li>Error_Codes_SF&#160;:&#160;<a class="el" href="dd/d1c/arduino__main_2signature__engine_8h.html#a71294fb18b2f091cb4db120c47248cb4">signature_engine.h</a></li>
@@ -103,11 +61,40 @@ $(function(){initNavTree('globals_enum.html','',''); });
 </div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
+<!-- HTML footer for doxygen 1.15.0-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="footer">Документация по USB-Guard. Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>
+<!-- Авто-раскрытие всего дерева навигации слева -->
+<script type="text/javascript">
+  (function () {
+    function expandAll() {
+      var tree = document.getElementById('nav-tree');
+      if (!tree) return false;
+      // все свёрнутые узлы имеют ссылку-стрелку с классом arrow и символ ►
+      var changed = false;
+      var arrows = tree.querySelectorAll('a.arrow');
+      for (var i = 0; i < arrows.length; i++) {
+        var a = arrows[i];
+        // ► (►) = свёрнут; раскрываем кликом
+        if (a.textContent.indexOf('►') !== -1) {
+          a.click();
+          changed = true;
+        }
+      }
+      return changed;
+    }
+    var tries = 0;
+    var timer = setInterval(function () {
+      var changed = expandAll();
+      tries++;
+      // останавливаемся, когда раскрывать больше нечего или вышел лимит попыток
+      if ((!changed && tries > 3) || tries > 60) clearInterval(timer);
+    }, 250);
+  })();
+</script>
 </body>
 </html>

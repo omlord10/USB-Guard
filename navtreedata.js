@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "USB-Guard", "index.html", [
+    [ "USBGuard v4 — Sector Scanner + HDMI Terminal", "index.html", "index" ],
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],
