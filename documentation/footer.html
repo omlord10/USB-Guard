@@ -1,0 +1,46 @@
+<!-- HTML footer for doxygen 1.15.0-->
+<!-- start footer part -->
+<!--BEGIN GENERATE_TREEVIEW-->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    $navpath
+    <li class="footer">$generatedby <a href="https://www.doxygen.org/index.html"><img class="footer" src="$relpath^doxygen.svg" width="104" height="31" alt="doxygen"/></a> $doxygenversion </li>
+  </ul>
+</div>
+<!--END GENERATE_TREEVIEW-->
+<!--BEGIN !GENERATE_TREEVIEW-->
+<hr class="footer"/><address class="footer"><small>
+$generatedby&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="$relpath^doxygen.svg" width="104" height="31" alt="doxygen"/></a> $doxygenversion
+</small></address>
+</div><!-- doc-content -->
+<!--END !GENERATE_TREEVIEW-->
+<!-- Авто-раскрытие всего дерева навигации слева -->
+<script type="text/javascript">
+  (function () {
+    function expandAll() {
+      var tree = document.getElementById('nav-tree');
+      if (!tree) return false;
+      // все свёрнутые узлы имеют ссылку-стрелку с классом arrow и символ ►
+      var changed = false;
+      var arrows = tree.querySelectorAll('a.arrow');
+      for (var i = 0; i < arrows.length; i++) {
+        var a = arrows[i];
+        // ► (►) = свёрнут; раскрываем кликом
+        if (a.textContent.indexOf('►') !== -1) {
+          a.click();
+          changed = true;
+        }
+      }
+      return changed;
+    }
+    var tries = 0;
+    var timer = setInterval(function () {
+      var changed = expandAll();
+      tries++;
+      // останавливаемся, когда раскрывать больше нечего или вышел лимит попыток
+      if ((!changed && tries > 3) || tries > 60) clearInterval(timer);
+    }, 250);
+  })();
+</script>
+</body>
+</html>
