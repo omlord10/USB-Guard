@@ -1,0 +1,18 @@
+# Сгенерированная Doxygen-документация (перегенерируется из documentation/Doxyfile)
+doxygen-documentation/
+
+# Дубль исходников (рабочие копии лежат в arduino/ и fpga/)
+documentation/arduino/
+documentation/fpga/
+
+# Артефакты сборки FPGA (Gowin IDE)
+fpga/impl/
+documentation/fpga/impl/
+*.fs
+*.bin
+
+# Системный мусор
+.DS_Store
+Thumbs.db
+*.bak
+*~
