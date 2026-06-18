@@ -11,6 +11,9 @@ documentation/fpga/impl/
 *.fs
 *.bin
 
+# Лог сборки doxygen
+documentation/doxy_err.log
+
 # Системный мусор
 .DS_Store
 Thumbs.db

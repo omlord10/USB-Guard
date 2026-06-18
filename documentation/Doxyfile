@@ -74,7 +74,7 @@ PROJECT_ICON           =
 # entered, it will be relative to the location where Doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = C:/Users/omlor/Desktop/homework/2kurs(2)/shema/kursovaya/FINAL/usbguard_v5_absolute/usbguard_v5_fixed/doxygen-documentation
+OUTPUT_DIRECTORY       = ../doxygen-documentation
 
 # If the CREATE_SUBDIRS tag is set to YES then Doxygen will create up to 4096
 # sub-directories (in 2 levels) under the output directory of each output format
@@ -991,7 +991,9 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = C:/Users/omlor/Desktop/homework/2kurs(2)/shema/kursovaya/FINAL/usbguard_v5_absolute/usbguard_v5_fixed/documentation
+INPUT                  = ../arduino \
+                         ../fpga/src \
+                         ../README.md
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1082,11 +1084,11 @@ FILE_PATTERNS          = *.c \
                          *.qsf \
                          *.ice \
                          *.v \
-                         .mod \
-                         .ipc \
-                         .vh \
-                         .cst \
-                         .sdc
+                         *.mod \
+                         *.ipc \
+                         *.vh \
+                         *.cst \
+                         *.sdc
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
@@ -1445,7 +1447,7 @@ HTML_FOOTER            =
 # obsolete.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_STYLESHEET        = D:/progs/doxygen/style/doxygen-awesome-css/doxygen-awesome.css
+HTML_STYLESHEET        = doxygen-awesome-css/doxygen-awesome.css
 
 # The HTML_EXTRA_STYLESHEET tag can be used to specify additional user-defined
 # cascading style sheets that are included after the standard style sheets
@@ -1463,7 +1465,8 @@ HTML_STYLESHEET        = D:/progs/doxygen/style/doxygen-awesome-css/doxygen-awes
 # documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET  =
+HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome-sidebar-only.css \
+                         doxygen-awesome-css/doxygen-awesome-sidebar-only-darkmode-toggle.css
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -1473,11 +1476,11 @@ HTML_EXTRA_STYLESHEET  =
 # files will be copied as-is; there are no commands or markers available.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_FILES       = D:/progs/doxygen/style/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
-                         D:/progs/doxygen/style/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
-                         D:/progs/doxygen/style/doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
-                         D:/progs/doxygen/style/doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
-                         D:/progs/doxygen/style/doxygen-awesome-css/doxygen-awesome-tabs.js
+HTML_EXTRA_FILES       = doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
+                         doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
+                         doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
+                         doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
+                         doxygen-awesome-css/doxygen-awesome-tabs.js
 
 # The HTML_COLORSTYLE tag can be used to specify if the generated HTML output
 # should be rendered with a dark or light theme.
@@ -1653,7 +1656,7 @@ DOCSET_PUBLISHER_NAME  = Publisher
 # The default value is: NO.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-GENERATE_HTMLHELP      = YES
+GENERATE_HTMLHELP      = NO
 
 # The CHM_FILE tag can be used to specify the file name of the resulting .chm
 # file. You can add a path in front of the file if the result should not be
