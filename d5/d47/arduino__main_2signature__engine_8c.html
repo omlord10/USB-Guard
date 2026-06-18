@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.15.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FPGA: Файл /home/yama/Documents/2kurs(2)/schematechnik/absolute_final_version/arduino/arduino_main/signature_engine.c</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">var page_layout=1;</script>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<script type="text/javascript" src="../../clipboard.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FPGA
+   </div>
+  </td>
+ </tr>
+   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td></tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.15.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('d5/d47/arduino__main_2signature__engine_8c.html','../../',''); });
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск',true);
+});
+</script>
+<div id="main-nav"></div>
+<div id="container"><div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Файл signature_engine.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Реализация потокового сканера сигнатур (см. signature_engine.h).  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="../../dd/d1c/arduino__main_2signature__engine_8h_source.html">signature_engine.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a4e623caf1e3780f431e67df94e6b593f" id="r_a4e623caf1e3780f431e67df94e6b593f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e623caf1e3780f431e67df94e6b593f">scan_init</a> (<a class="el" href="../../da/d85/structScanState.html">ScanState</a> *state)</td></tr>
+<tr class="memdesc:a4e623caf1e3780f431e67df94e6b593f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует состояние сканера (сбрасывает хвост).  <br /></td></tr>
+<tr class="memitem:aee744a6993823ca659aa862a3ac64fbc" id="r_aee744a6993823ca659aa862a3ac64fbc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee744a6993823ca659aa862a3ac64fbc">scan_feed</a> (<a class="el" href="../../da/d85/structScanState.html">ScanState</a> *state, const unsigned char *block, unsigned int block_len, const <a class="el" href="../../db/d3c/structVirusSignature.html">VirusSignature</a> *sigs, unsigned int sig_count, int *virus_flag, const char **match_name)</td></tr>
+<tr class="memdesc:aee744a6993823ca659aa862a3ac64fbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Скармливает сканеру один блок данных и ищет в нём сигнатуры.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Реализация потокового сканера сигнатур (см. signature_engine.h). </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="aee744a6993823ca659aa862a3ac64fbc" name="aee744a6993823ca659aa862a3ac64fbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee744a6993823ca659aa862a3ac64fbc">&#9670;&#160;</a></span>scan_feed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int scan_feed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d85/structScanState.html">ScanState</a> *</td>          <td class="paramname"><span class="paramname"><em>state</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned char *</td>          <td class="paramname"><span class="paramname"><em>block</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>block_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../db/d3c/structVirusSignature.html">VirusSignature</a> *</td>          <td class="paramname"><span class="paramname"><em>sigs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname"><em>sig_count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>virus_flag</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **</td>          <td class="paramname"><span class="paramname"><em>match_name</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Скармливает сканеру один блок данных и ищет в нём сигнатуры. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Состояние сканера. Не должен быть NULL. </td></tr>
+    <tr><td class="paramname">block</td><td>Блок данных (например, сектор 512 байт). Не должен быть NULL. </td></tr>
+    <tr><td class="paramname">block_len</td><td>Длина блока в байтах. </td></tr>
+    <tr><td class="paramname">sigs</td><td>Таблица сигнатур. Не должна быть NULL. </td></tr>
+    <tr><td class="paramname">sig_count</td><td>Количество сигнатур в таблице. </td></tr>
+    <tr><td class="paramname">virus_flag</td><td>Выход: 1 если найдена сигнатура, иначе 0. Не должен быть NULL. </td></tr>
+    <tr><td class="paramname">match_name</td><td>Выход: имя найденной угрозы (или не трогается, если чисто). Не NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>SF_SUCCESS при успехе, иначе значение <a class="el" href="../../dd/d1c/arduino__main_2signature__engine_8h.html#a71294fb18b2f091cb4db120c47248cb4" title="Коды ошибок scan_feed().">Error_Codes_SF</a>. </dd></dl>
+<dl class="section note"><dt>Заметки</dt><dd>Сигнатуры на стыке блоков ловятся через carry предыдущего вызова. </dd></dl>
+<dl class="section warning"><dt>Предупреждения</dt><dd>Длина каждой сигнатуры должна быть в диапазоне 1..SIG_MAX_LEN. </dd></dl>
+
+</div>
+</div>
+<a id="a4e623caf1e3780f431e67df94e6b593f" name="a4e623caf1e3780f431e67df94e6b593f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e623caf1e3780f431e67df94e6b593f">&#9670;&#160;</a></span>scan_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int scan_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d85/structScanState.html">ScanState</a> *</td>          <td class="paramname"><span class="paramname"><em>state</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализирует состояние сканера (сбрасывает хвост). </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Указатель на состояние. Не должен быть NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>SI_SUCCESS при успехе, иначе значение <a class="el" href="../../dd/d1c/arduino__main_2signature__engine_8h.html#afe1114d8d362d2303595ab731ca17547" title="Коды ошибок scan_init().">Error_Codes_SI</a>. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="../../dir_7957e4d193d4a425fd39fd4994c5caf1.html">arduino</a></li><li class="navelem"><a href="../../dir_9596ba72be4289643381037af0a654a7.html">arduino_main</a></li><li class="navelem"><a href="../../d5/d47/arduino__main_2signature__engine_8c.html">signature_engine.c</a></li>
+    <li class="footer">Документация по FPGA. Последние изменения: <span class="timestamp"></span>. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
+  </ul>
+</div>
+</body>
+</html>
